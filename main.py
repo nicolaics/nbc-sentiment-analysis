@@ -1,3 +1,10 @@
+'''
+    Main file to drive all of the code.
+    Run this file to train the NBC model
+    and predict the test dataset using
+    the trained NBC model.
+'''
+
 from training import train
 from predict import predict
 from preprocess import preprocess
