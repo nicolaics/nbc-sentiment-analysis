@@ -1,5 +1,8 @@
+'''
+    The file to plot the result of the accuracy
+'''
+
 import matplotlib.pyplot as plt
-import numpy as np
 
 def plot(accuracy: dict):
     plt.figure(figsize=(12, 8))

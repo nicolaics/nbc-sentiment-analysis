@@ -1,3 +1,7 @@
+'''
+    The file to pre-process the text
+'''
+
 import csv
 import re
 

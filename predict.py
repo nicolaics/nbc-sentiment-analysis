@@ -1,12 +1,13 @@
+'''
+    This file is to predict the test data,
+    from a trained NBC model
+'''
+
 def calc_accuracy(acc_count: dict):
     return ((acc_count['tn'] + acc_count['tp']) / sum(acc_count.values()))
 
 def predict(likelihood_pos: dict, likelihood_neg: dict, prior_prob: dict,
             test_data: list):
-    # test_data_path = "./data/test.csv"
-
-    # test_data = preprocess(test_data_path)[0]
-
     acc_count = {'tp': 0, 'tn': 0, 'fp': 0, 'fn': 0}
 
     for row in test_data:
