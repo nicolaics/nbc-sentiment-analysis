@@ -37,7 +37,7 @@ def train(train_data: list, train_data_count: dict, train_words: dict) -> tuple[
     train_words_pos = {k: 0 for k in top_thousand.keys()}
     train_words_neg = {k: 0 for k in top_thousand.keys()}
 
-    # train the model
+    # get the number of frequency of word with respect to the sentiment they gave
     for row in train_data:
         label = int(row['stars'].strip())
 
