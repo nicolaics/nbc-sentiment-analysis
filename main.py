@@ -18,9 +18,11 @@ use_train_data_percentage = [0.1, 0.3, 0.5, 0.7, 1]
 # pre-process the test data first
 test_data = preprocess(test_data_path)[0]
 
+top_20_50_file = "top_20_50_words.txt"
+
 # remove the text file first if exists
-if os.path.exists("top_50.txt"):
-    os.remove("top_50.txt")
+if os.path.exists(top_20_50_file):
+    os.remove(top_20_50_file)
 
 # the loop to train the NBC and predict the test data
 # and calculate the accuracy of the model
@@ -29,13 +31,16 @@ for i in use_train_data_percentage:
     train_data, train_words_label_count, train_words_list = preprocess(train_data_path, i)
 
     # get the top 50 words that appear
-    top_fifty = dict(sorted(train_words_list.items(), key=lambda item: item[1], reverse=True)[:50])
+    top_twenty_fifty = dict(sorted(train_words_list.items(), key=lambda item: item[1], reverse=True)[19:50])
+
+    count = 20
 
     # save the top 50 words in a file
-    fh = open("top_50.txt", 'a')
+    fh = open(top_20_50_file, 'a')
     fh.write(f"Training Data Set Use: {(i * 100):.0f}%\n")
-    for k, v in top_fifty.items():
-        fh.write(f'{k}: {v}\n')
+    for k, v in top_twenty_fifty.items():
+        fh.write(f'{count}. {k}: {v}\n')
+        count += 1
 
     fh.write("\n\n")
     fh.flush()
