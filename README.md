@@ -11,6 +11,7 @@ There are 5 files to create and predict from a trained NBC model:
 4. preprocess.py
 5. training.py
 
+
 The function of each files is as follow:
 
 1. main.py: the driver code to run all the NBC for Sentiment Analysis
